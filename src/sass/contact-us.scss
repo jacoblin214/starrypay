@@ -1,0 +1,191 @@
+/**
+ * @Author: jecyu
+ * @Date: 2018-01-11 10:50:27 am 
+ * @Modified By: jeCyu 
+ * @Last Modified time: 2018-01-11 5:42:56 pm 
+ */
+/**
+ * @Author: jecyu
+ * @Date: 2018-01-04 5:16:51 pm 
+ * @Modified By: jeCyu 
+ * @Last Modified time: 2018-01-10 6:26:24 pm 
+ */
+
+@import "mixin/_mixin.scss";
+// banner
+.section-banner {
+    height: pxTorem(350px);
+    width: 100%;
+}
+
+/* banner */
+
+.banner {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: inherit;
+    height: inherit;
+    .banner-figcaption {
+        z-index: 100;
+        position: absolute;
+        left: 10%;
+        top: 60%;
+        @include font-dpr(16px);
+        color: rgb(255, 255, 255);
+        strong {
+            @include font-dpr(26px);
+            font-weight: 400;
+        }
+    }
+    .baner-figure {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    img {
+        position: absolute; // top: 0;
+        // left: 0;
+        // right: 0;
+        // bottom: 0;
+        width: 100%;
+        height: 100%; // based on the position ansector: banner
+    }
+}
+
+// section-main
+.section-main {
+    margin-top: pxTorem(40px);
+    margin-bottom: pxTorem(40px);
+}
+
+.tab {
+    min-height: pxTorem(600px);
+    .tabs-nav {
+        margin-top: pxTorem(80px);
+        padding-bottom: pxTorem(20px);
+
+        @media screen and (max-width: 767px) {
+            display: flex;
+            align-items: center;
+            margin-top: pxTorem(0px);
+        } // width: pxTorem(300px);
+
+        font-size: pxTorem(20px);
+
+        li {
+            width: 100%;
+            @media screen and (max-width: 767px) {
+                width: 25%;
+                padding-left: pxTorem(0px);
+                font-size: pxTorem(16px);
+                text-align: center;
+                margin-top: 0;
+            }
+            height: pxTorem(50px);
+            line-height: pxTorem(50px);
+            padding-left: pxTorem(24px);
+            border: 0;
+            box-sizing: border-box;
+            &:not(:first-child) {
+                margin-top: pxTorem(20px);
+                @media screen and (max-width: 767px) {
+                    margin-top: pxTorem(0px);
+                }
+            }
+            a {
+                color: #828282;
+                display: block;
+            }
+            &.tabs-active {
+                border: 0;
+                background: #ff8700;
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        // width: pxTorem(750px);
+        .item-title {
+            position: relative;
+            font-size: pxTorem(30px);
+            font-weight: normal;
+            text-align: center;
+            color: #5a5a5a;
+
+            &.underline::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: -60%;
+                width: 10%;
+                transform: translate(-50%, 0);
+                height: pxTorem(3px);
+                background: #ff8700;
+            }
+        }
+        .item-desc {
+            margin-top: pxTorem(40px);
+            font-size: pxTorem(16px);
+            text-indent: pxTorem(32px);
+            color: #828282;
+            line-height: 1.5;
+        }
+
+        .item-map {
+            position: relative;
+            height: pxTorem(500px);
+
+            background: url(../images/map.png) no-repeat;
+            background-size: contain;
+        }
+    }
+}
+
+.contact-list {
+    .contact-item {
+        margin-bottom: pxTorem(54px);
+
+        p {
+            margin: pxTorem(10px) 0;
+        }
+    }
+}
+
+.address-list {
+    position: relative;
+    height: inherit;
+    width: inherit;
+
+    .address-item {
+        height: pxTorem(40px);
+        width: pxTorem(40px);
+        border-radius: 50%;
+
+        text-align: center;
+        line-height: pxTorem(40px);
+        color: #fff;
+        background: #ff8700;
+    }
+
+    //  .fuzhou {
+    //     position: absolute;
+    //     bottom: pxTorem(120px);
+    //     right: pxTorem(120px);
+
+    // }
+    // .xiamen {
+    //     position: absolute;
+    //     bottom: pxTorem(80px);
+    //     right: pxTorem(140px);
+    // }
+
+    // .shenzhen {
+    //     position: absolute;
+    //     bottom: pxTorem(50px);
+    //     right: pxTorem(180px);
+    // }
+}

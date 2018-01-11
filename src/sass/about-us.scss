@@ -2,7 +2,7 @@
  * @Author: jecyu
  * @Date: 2018-01-04 5:16:51 pm 
  * @Modified By: jeCyu 
- * @Last Modified time: 2018-01-10 6:26:24 pm 
+ * @Last Modified time: 2018-01-11 5:42:45 pm 
  */
 @import "mixin/_mixin.scss";
 
@@ -57,11 +57,26 @@
 
     .tabs-nav {
         margin-top: pxTorem(80px);
+        padding-bottom: pxTorem(20px);
+
+        @media screen and (max-width: 767px) {
+            display: flex;
+            align-items: center;
+            margin-top: pxTorem(0px);
+        }
         // width: pxTorem(300px);
         font-size: pxTorem(20px);
 
         li {
             width: 100%;
+            @media screen and (max-width: 767px) {
+                width: 25%;
+                padding-left: pxTorem(0px);
+                font-size: pxTorem(16px);
+                text-align: center;
+                margin-top: 0;
+            }
+
             height: pxTorem(50px);
             line-height: pxTorem(50px);
             padding-left: pxTorem(24px);
@@ -70,6 +85,9 @@
 
             &:not(:first-child) {
                 margin-top: pxTorem(20px);
+                @media screen and (max-width: 767px) {
+                    margin-top: pxTorem(0px);
+                }
             }
 
             a {
@@ -92,10 +110,22 @@
         // width: pxTorem(750px);
 
         .item-title {
+            position: relative;
             font-size: pxTorem(30px);
             font-weight: normal;
             text-align: center;
             color: #5a5a5a;
+
+            &.underline::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: -60%;
+                width: 10%;
+                transform: translate(-50%, 0);
+                height: pxTorem(3px);
+                background: #ff8700;
+            }
         }
 
         .item-desc {

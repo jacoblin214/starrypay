@@ -1,0 +1,492 @@
+@charset "UTF-8";
+/**
+ * @Author: jecyu
+ * @Date: 2017-12-11 4:49:47 pm 
+ * @Modified By: jeCyu 
+ * @Last Modified time: 2018-01-11 2:21:58 pm 
+ */
+.vert-offset-top-0 {
+  margin-top: 0em;
+}
+
+.vert-offset-bottom-0 {
+  margin-bottom: 0em;
+}
+
+.vert-offset-top-1 {
+  margin-top: 1em;
+}
+
+.vert-offset-bottom-1 {
+  margin-bottom: 1em;
+}
+
+.vert-offset-top-2 {
+  margin-top: 2em;
+}
+
+.vert-offset-bottom-2 {
+  margin-bottom: 2em;
+}
+
+.vert-offset-top-3 {
+  margin-top: 3em;
+}
+
+.vert-offset-bottom-3 {
+  margin-bottom: 3em;
+}
+
+.vert-offset-top-4 {
+  margin-top: 4em;
+}
+
+.vert-offset-bottom-4 {
+  margin-bottom: 4em;
+}
+
+.vert-offset-top-5 {
+  margin-top: 5em;
+}
+
+.vert-offset-bottom-5 {
+  margin-bottom: 5em;
+}
+
+.vert-offset-top-6 {
+  margin-top: 6em;
+}
+
+.vert-offset-bottom-6 {
+  margin-bottom: 6em;
+}
+
+.vert-offset-top-7 {
+  margin-top: 7em;
+}
+
+.vert-offset-bottom-7 {
+  margin-bottom: 7em;
+}
+
+.vert-offset-top-8 {
+  margin-top: 8em;
+}
+
+.vert-offset-bottom-8 {
+  margin-bottom: 8em;
+}
+
+.vert-offset-top-9 {
+  margin-top: 9em;
+}
+
+.vert-offset-bottom-9 {
+  margin-bottom: 9em;
+}
+
+.vert-offset-top-10 {
+  margin-top: 10em;
+}
+
+.vert-offset-bottom-10 {
+  margin-bottom: 10em;
+}
+
+.vert-offset-top-11 {
+  margin-top: 11em;
+}
+
+.vert-offset-bottom-11 {
+  margin-bottom: 11em;
+}
+
+.vert-offset-top-12 {
+  margin-top: 12em;
+}
+
+.vert-offset-bottom-12 {
+  margin-bottom: 12em;
+}
+
+html,
+body {
+  font-family: "Microsoft YaHei", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  line-height: 1.5;
+}
+
+html {
+  font-size: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+}
+
+/* box-sizing 缁ф壙 html */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+* {
+  /* Chrome browser font-size is less than 12px The default is 12px solution */
+  -webkit-text-size-adjust: none;
+}
+
+/* reset style */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+figure,
+img,
+a,
+header,
+footer,
+main,
+section,
+article,
+figcaption,
+figure {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button {
+  border: 0;
+  background: transparent;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #747474;
+}
+
+img {
+  display: inline-block;
+  border: 0;
+}
+
+a,
+img {
+  /* Prohibit long press links and picture pop-up menus */
+  -webkit-touch-callout: none;
+}
+
+html,
+body {
+  /* prohibit select the text */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+/* html5 structure */
+nav,
+header,
+footer,
+main,
+section,
+article,
+figcaption,
+figure {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.inner-center {
+  width: 12rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* custom fixed width */
+@media (min-width: 1200) {
+  .container {
+    max-width: 12rem;
+  }
+}
+.clearfix::after {
+  content: ".";
+  visibility: hidden;
+  height: 0;
+  display: block;
+  clear: both;
+}
+
+/* site header */
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+}
+
+/* nav-top */
+.nav-top {
+  background: #5a5a5a;
+}
+
+.brumb-list {
+  padding: 0.1rem 0;
+  font-size: 0;
+  text-align: right;
+}
+.brumb-list .brumb-item {
+  font-size: 0.16rem;
+  display: inline-block;
+  padding: 0 0.2rem;
+}
+.brumb-list .brumb-item + .brumb-item {
+  border-left: 0.02rem solid #fff;
+}
+.brumb-list .brumb-link {
+  color: #fff;
+}
+
+.navbar-fixed-bottom .navbar-collapse,
+.navbar-fixed-top .navbar-collapse {
+  max-height: 100%;
+}
+
+.navbar {
+  position: relative;
+  min-height: 0.6rem;
+  height: auto;
+  margin-bottom: 0;
+  border: 1px solid transparent;
+  font-size: 0.18rem;
+  background: #fff;
+}
+
+.navbar-nav > li > a {
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  line-height: 0.2rem;
+  /* main menu */
+}
+.navbar-nav > li > a a:focus,
+.navbar-nav > li > a a:hover {
+  color: #ff8700;
+  text-decoration: underline;
+}
+
+.navbar-brand {
+  height: 0.6rem;
+}
+.navbar-brand .Brand {
+  width: 1.2rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  min-width: 100%;
+  font-size: 0.16rem;
+  -webkit-filter: opacity(0.8);
+          filter: opacity(0.8);
+  -webkit-box-shadow: 0rem 0rem 0.02rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0rem 0rem 0.02rem rgba(0, 0, 0, 0.4);
+}
+
+/* The fixed navbar will overlay your other content, unless you add padding to the top of the <body> */
+body {
+  padding-top: 1.06rem;
+}
+
+/* .nav-menu-list {
+    float: left;
+    margin-left: pxTorem(204px);
+    font-size: 0;
+    text-align: center;
+    .menu-item {
+        position: relative;
+        display: inline-block;
+        width: pxTorem(140px);
+        font-size: pxTorem(20px);
+        line-height: pxTorem(74px);
+        transition: all 0.5s ease;
+        &.active {
+        }
+        &:hover {
+            background: rgba($color: #000000, $alpha: 0.1);
+            .sub-menu-list {
+                display: block;
+            }
+        }
+        .iconfont {
+            font-size: pxTorem(4px);
+            vertical-align: middle;
+        }
+        .menu-item-link {
+            color: #3c3c3c;
+            &.active {
+                color: #ff8700;
+            }
+        }
+    }
+}
+ */
+/* .sub-menu-list {
+    position: absolute;
+    display: none;
+    width: pxTorem(140px);
+    padding: pxTorem(20px) 0;
+    filter: opacity(0.8);
+    box-shadow: pxTorem(0px) pxTorem(0px) pxTorem(2px)
+        rgba($color: #000000, $alpha: 0.4);
+    background: #fff; // background: rgba($color: #000000, $alpha: 0.6);
+    // display: none;
+    .sub-menu-item {
+        line-height: pxTorem(40px);
+        height: pxTorem(40px);
+        &:hover {
+            background: rgba($color: #000000, $alpha: 0.1);
+            a {
+                color: rgb(243, 143, 26);
+            }
+        }
+    }
+}
+ */
+/* common footer  */
+.common-footer {
+  min-height: 3.5rem;
+  background: #5a5a5a;
+  color: #fff;
+  padding: 0.5rem 0 0.38rem 0;
+}
+.common-footer .inner-center {
+  width: 9.12rem;
+}
+.common-footer .footer-down {
+  margin-top: 0.3rem;
+}
+
+/* website-link */
+.website-link {
+  border-bottom: 0.03rem solid #fff;
+}
+.website-link .primary-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 0.3rem;
+}
+.website-link .primary-list .primary-title {
+  font-size: 0.18rem;
+  font-weight: normal;
+}
+@media screen and (max-width: 767px) {
+  .website-link .primary-list .primary-title {
+    font-size: 0.16rem;
+  }
+}
+.website-link .sub-list {
+  margin-top: 0.18rem;
+  font-size: 0.14rem;
+}
+@media screen and (max-width: 767px) {
+  .website-link .sub-list {
+    font-size: 0.12rem;
+  }
+}
+.website-link .sub-list .sub-item:not(:first-child) {
+  margin-top: 0.14rem;
+}
+.website-link .sub-list .link {
+  color: #fff;
+}
+.website-link .sub-list .link:hover {
+  color: #ccc;
+}
+
+.statement {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0.14rem;
+}
+.statement .social-wrap {
+  position: relative;
+  display: inline-block;
+  height: 0.3rem;
+  width: 0.3rem;
+  border: 0.01rem solid #fff;
+  border-radius: 50%;
+  margin-left: 0.4rem;
+  text-align: center;
+  line-height: 0.3rem;
+  cursor: pointer;
+}
+.statement .social-wrap:hover .social-img {
+  display: block;
+}
+.statement .social-wrap .iconfont {
+  font-size: 0.2rem;
+}
+.statement .social-wrap .social-img {
+  position: absolute;
+  display: inline-block;
+  top: -1.2rem;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+      -ms-transform: translate(-50%);
+          transform: translate(-50%);
+  display: none;
+  height: 1rem;
+  width: 1rem;
+}
+.statement .social-wrap .social-img img {
+  border: 0.02rem solid #ff8700;
+  border-radius: 10%;
+  width: inherit;
+  height: inherit;
+}
