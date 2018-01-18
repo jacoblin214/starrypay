@@ -2,7 +2,7 @@
  * @Author: jecyu
  * @Date: 2017-12-19 4:36:23 pm
  * @Modified By: jeCyu
- * @Last Modified time: 2018-01-17 9:02:59 pm
+ * @Last Modified time: 2018-01-18 8:50:21 pm 
  */
 
 // 获取 Nav 的hash。
@@ -34,7 +34,7 @@ var page = {
 
 $(document).ready(function() {
     page.init();
-    let dropdown_menu = $(".dropdown .dropdown-menu");
+    /*     let dropdown_menu = $(".dropdown .dropdown-menu");
     let dropdown_menu_link = dropdown_menu.find("a");
     console.log(dropdown_menu_link);
 
@@ -74,5 +74,5 @@ $(document).ready(function() {
                 }
             }
         }
-    });
+    }); */
 });

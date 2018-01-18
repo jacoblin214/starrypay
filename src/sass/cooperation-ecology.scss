@@ -2,7 +2,7 @@
  * @Author: jecyu
  * @Date: 2018-01-16 2:32:54 pm 
  * @Modified By: jeCyu 
- * @Last Modified time: 2018-01-18 2:41:58 pm 
+ * @Last Modified time: 2018-01-18 11:08:19 pm 
  */
 @import "mixin/_mixin.scss";
 // banner
@@ -173,6 +173,30 @@
             &.active {
                 display: block;
             }
+        }
+    }
+}
+
+#cooperation_channels {
+    .feature-list {
+        color: #7d7d7d;
+        .icon {
+            display: inline-block;
+            height: pxTorem(40px);
+        }
+
+        .title {
+            margin-bottom: pxTorem(10px);
+        }
+
+        .feature-item {
+            padding: pxTorem(15px);
+        }
+    }
+
+    .sub-feature-list {
+        .sub-feature-item {
+            margin-bottom: pxTorem(10px);
         }
     }
 }

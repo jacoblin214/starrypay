@@ -1,8 +1,8 @@
 /**
  * @Author: jecyu
- * @Date: 2018-01-16 3:56:59 pm
+ * @Date: 2018-01-18 9:24:40 pm
  * @Modified By: jeCyu
- * @Last Modified time: 2018-01-18 9:19:45 pm
+ * @Last Modified time: 2018-01-18 9:28:32 pm
  */
 
 /**
@@ -38,13 +38,9 @@ var $tabs_nav = $(".tabs-nav");
 var $tabs_item_link = $tabs_nav.find(".nav-item a");
 
 // 操作tab
-var tab_1 = "card_cooperation";
-var tab_2 = "industry_cooperation";
-var tab_3 = "pay_for_access";
-var tab_4 = "authentication_access";
-var tab_5 = "sub_application_access";
-var tab_6 = "cooperation_channels";
-var tab_7 = "joint_venture";
+var tab_1 = "starrypay";
+var tab_2 = "certification";
+var tab_3 = "core_card";
 
 // 回调函数处理
 // for (let i = 1; i <= 7; i++) {
@@ -66,22 +62,6 @@ Router.route("/" + tab_2, function() {
 
 Router.route("/" + tab_3, function() {
     changeTab($tabs_item_link, tab_3);
-});
-
-Router.route("/" + tab_4, function() {
-    changeTab($tabs_item_link, tab_4);
-});
-
-Router.route("/" + tab_5, function() {
-    changeTab($tabs_item_link, tab_5);
-});
-
-Router.route("/" + tab_6, function() {
-    changeTab($tabs_item_link, tab_6);
-});
-
-Router.route("/" + tab_7, function() {
-    changeTab($tabs_item_link, tab_7);
 });
 
 $tabs_item_link.on("click", function() {
