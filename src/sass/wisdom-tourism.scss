@@ -2,7 +2,7 @@
  * @Author: jecyu
  * @Date: 2018-01-15 7:57:45 pm 
  * @Modified By: jeCyu 
- * @Last Modified time: 2018-01-15 8:25:02 pm 
+ * @Last Modified time: 2018-01-18 3:29:29 pm 
  */
 @import "mixin/_mixin.scss";
 // banner
@@ -99,6 +99,12 @@
 /* section-traffic */
 
 .section-traffic {
+    img {
+        @media screen and (max-width: 768px) {
+            height: pxTorem(214px);
+            // width: pxTorem(500px);
+        }
+    }
     .section-title {
         margin-top: 0;
     }
@@ -287,6 +293,10 @@
         .media-figcaption {
             padding-left: pxTorem(50px);
             text-align: left;
+
+            @media screen and (max-width: 767px) {
+                padding-left: pxTorem(20px);
+            }
             .title {
                 margin-top: pxTorem(50px);
                 margin-bottom: pxTorem(30px);
@@ -306,7 +316,8 @@
                 padding-left: pxTorem(20px);
                 @media screen and (max-width: 767px) {
                     font-size: pxTorem(14px);
-                    line-height: pxTorem(20px);
+                    line-height: pxTorem(16px);
+                    padding-left: pxTorem(22px);
                 }
                 /* line */
                 &::before {
@@ -314,8 +325,8 @@
                     display: block;
                     position: absolute;
                     left: 0;
-                    top: pxTorem(16px);
-                    transform: translate(0, -50%);
+                    top: pxTorem(14px);
+
                     height: pxTorem(3px);
                     width: pxTorem(14px);
                     background: #ff8601;
@@ -335,24 +346,26 @@
     }
     .carousel-caption {
         overflow: hidden;
-        left: 5%;
+        left: 0;
         bottom: 0;
+        opacity: 0.9;
         @media screen and (max-width: 992px) {
+            left: 10%;
             height: 60%;
             width: 80%;
         }
-        width: 40%;
-        height: 70%;
+        width: 100%;
+        height: 30%;
         padding: pxTorem(15px) pxTorem(15px) 0 pxTorem(15px);
         background: #fff;
         text-shadow: initial;
-        border-bottom: pxTorem(3px) solid rgba($color: #000000, $alpha: 0.2);
-        box-shadow: 0 pxTorem(30px) pxTorem(5px) pxTorem(2px)
+        text-align: left;
+        box-shadow: 0 pxTorem(30px) pxTorem(15px) pxTorem(4px)
             rgba($color: #000000, $alpha: 0.1);
         .hd {
             color: #ff8601;
             .title {
-                margin-bottom: pxTorem(10px);
+                padding-bottom: pxTorem(10px);
                 font-size: pxTorem(18px);
                 @media screen and (max-width: 767px) {
                     font-size: pxTorem(16px);

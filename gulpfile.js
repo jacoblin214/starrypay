@@ -6,26 +6,27 @@
  */
 
 // Load plugins
-var gulp = require("gulp"), // ±ØÐëÏÈÒýÈëgulp²å¼þ
-    del = require("del"), // ÎÄ¼þÉ¾³ý
-    sass = require("gulp-ruby-sass"), // sass ±àÒë
-    cached = require("gulp-cached"), // »º´æµ±Ç°ÈÎÎñÖÐµÄÎÄ¼þ£¬Ö»ÈÃÒÑÐÞ¸ÄµÄÎÄ¼þÍ¨¹ý¹ÜµÀ
-    uglify = require("gulp-uglify"), // js Ñ¹Ëõ
-    rename = require("gulp-rename"), // ÖØÃüÃû
-    concat = require("gulp-concat"), // ºÏ²¢ÎÄ¼þ
-    notify = require("gulp-notify"), // Ïàµ±ÓÚ console.log()
-    filter = require("gulp-filter"), // ¹ýÂËÉ¸Ñ¡Ö¸¶¨ÎÄ¼þ
-    jshint = require("gulp-jshint"), // js Óï·¨Ð£Ñé
-    rev = require("gulp-rev-append"), // ²åÈëÎÄ¼þÖ¸ÎÆ£¨MD5£©
-    cssnano = require("gulp-cssnano"), // CSS Ñ¹Ëõ
-    imagemin = require("gulp-imagemin"), // Í¼Æ¬ÓÅ»¯
-    browserSync = require("browser-sync"), // ±£´æ×Ô¶¯Ë¢ÐÂ
-    fileinclude = require("gulp-file-include"), // ¿ÉÒÔ include html ÎÄ¼þ
-    autoprefixer = require("gulp-autoprefixer"), // Ìí¼Ó CSS ä¯ÀÀÆ÷Ç°×º
+var gulp = require("gulp"), // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gulpï¿½ï¿½ï¿½
+    del = require("del"), // ï¿½Ä¼ï¿½É¾ï¿½ï¿½
+    sass = require("gulp-ruby-sass"), // sass ï¿½ï¿½ï¿½ï¿½
+    cached = require("gulp-cached"), // ï¿½ï¿½ï¿½æµ±Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Äµï¿½ï¿½Ä¼ï¿½Í¨ï¿½ï¿½ï¿½Üµï¿½
+    uglify = require("gulp-uglify"), // js Ñ¹ï¿½ï¿½
+    rename = require("gulp-rename"), // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    concat = require("gulp-concat"), // ï¿½Ï²ï¿½ï¿½Ä¼ï¿½
+    notify = require("gulp-notify"), // ï¿½àµ±ï¿½ï¿½ console.log()
+    filter = require("gulp-filter"), // ï¿½ï¿½ï¿½ï¿½É¸Ñ¡Ö¸ï¿½ï¿½ï¿½Ä¼ï¿½
+    jshint = require("gulp-jshint"), // js ï¿½ï·¨Ð£ï¿½ï¿½
+    rev = require("gulp-rev-append"), // ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½Ö¸ï¿½Æ£ï¿½MD5ï¿½ï¿½
+    cssnano = require("gulp-cssnano"), // CSS Ñ¹ï¿½ï¿½
+    imagemin = require("gulp-imagemin"), // Í¼Æ¬ï¿½Å»ï¿½
+    browserSync = require("browser-sync"), // ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ë¢ï¿½ï¿½
+    fileinclude = require("gulp-file-include"), // ï¿½ï¿½ï¿½ï¿½ include html ï¿½Ä¼ï¿½
+    autoprefixer = require("gulp-autoprefixer"), // ï¿½ï¿½ï¿½ CSS ï¿½ï¿½ï¿½ï¿½ï¿½Ç°×º
     // postcss = require('gulp-postcss'),
     fs = require("fs"),
     path = require("path"),
-    merge = require("merge-stream");
+    merge = require("merge-stream"),
+    gutil = require("gulp-util");
 
 var scriptsPath = "src/js";
 var distPath = "dist";
@@ -38,61 +39,65 @@ function getFolders(dir) {
 
 // sass
 gulp.task("sass", function() {
-    return sass("src/sass/**/*.scss", { style: "expanded" }) // ´«Èë sass Ä¿Â¼¼°×ÓÄ¿Â¼ÏÂµÄËùÓÐ .scss ÎÄ¼þÉú³ÉÎÄ¼þÁ÷Í¨¹ý¹ÜµÀ²¢ÉèÖÃÊä³ö¸ñÊ½
-        .pipe(cached("sass")) // »º´æ´«ÈëÎÄ¼þ£¬Ö»ÈÃÒÑÐÞ¸ÄµÄÎÄ¼þÍ¨¹ý¹ÜµÀ£¨µÚÒ»´ÎÖ´ÐÐÊÇÈ«²¿Í¨¹ý£¬ÒòÎª»¹Ã»ÓÐ¼ÇÂ¼»º´æ£©
+    return sass("src/sass/**/*.scss", { style: "expanded" }) // ï¿½ï¿½ï¿½ï¿½ sass Ä¿Â¼ï¿½ï¿½ï¿½ï¿½Ä¿Â¼ï¿½Âµï¿½ï¿½ï¿½ï¿½ï¿½ .scss ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê½
+        .pipe(cached("sass")) // ï¿½ï¿½ï¿½æ´«ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸Äµï¿½ï¿½Ä¼ï¿½Í¨ï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½È«ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½Ã»ï¿½Ð¼ï¿½Â¼ï¿½ï¿½ï¿½æ£©
         .pipe(
             autoprefixer({
                 browsers: ["last 6 versions"]
             })
         )
 
-        .pipe(gulp.dest("dist/css")) // Êä³öµ½ dist/css Ä¿Â¼ÏÂ£¨²»Ó°Ïì´ËÊ±¹ÜµÀÀïµÄÎÄ¼þÁ÷£©
-        .pipe(rename({ suffix: ".min" })) // ¶Ô¹ÜµÀÀïµÄÎÄ¼þÁ÷Ìí¼Ó .min µÄÖØÃüÃû
-        .pipe(cssnano()) // Ñ¹Ëõ CSS
-        .pipe(gulp.dest("dist/css")); // Êä³öµ½ dist/css Ä¿Â¼ÏÂ£¬´ËÊ±Ã¿¸öÎÄ¼þ¶¼ÓÐÑ¹Ëõ£¨*.min.css£©ºÍÎ´Ñ¹Ëõ(*.css)Á½¸ö°æ±¾
+        .pipe(gulp.dest("dist/css")) // ï¿½ï¿½ï¿½ï¿½ï¿½ dist/css Ä¿Â¼ï¿½Â£ï¿½ï¿½ï¿½Ó°ï¿½ï¿½ï¿½Ê±ï¿½Üµï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½
+        .pipe(rename({ suffix: ".min" })) // ï¿½Ô¹Üµï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ .min ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        .pipe(cssnano()) // Ñ¹ï¿½ï¿½ CSS
+        .pipe(gulp.dest("dist/css")); // ï¿½ï¿½ï¿½ï¿½ï¿½ dist/css Ä¿Â¼ï¿½Â£ï¿½ï¿½ï¿½Ê±Ã¿ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½*.min.cssï¿½ï¿½ï¿½ï¿½Î´Ñ¹ï¿½ï¿½(*.css)ï¿½ï¿½ï¿½ï¿½ï¿½æ±¾
 });
 
-// css £¨¿½±´ *.min.css£¬³£¹æ CSS ÔòÊä³öÑ¹ËõÓëÎ´Ñ¹ËõÁ½¸ö°æ±¾£©
+// css ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *.min.cssï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ CSS ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½Î´Ñ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ±¾ï¿½ï¿½
 gulp.task("css", function() {
     return gulp
         .src("src/css/**/*.css")
         .pipe(cached("css"))
-        .pipe(gulp.dest("dist/css")) // °Ñ¹ÜµÀÀïµÄËùÓÐÎÄ¼þÊä³öµ½ dist/css Ä¿Â¼
-        .pipe(filter(["**/*", "!**/*.min.css"])) // É¸Ñ¡³ö¹ÜµÀÖÐµÄ·Ç *.min.css ÎÄ¼þ
+        .pipe(gulp.dest("dist/css")) // ï¿½Ñ¹Üµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ dist/css Ä¿Â¼
+        .pipe(filter(["**/*", "!**/*.min.css"])) // É¸Ñ¡ï¿½ï¿½ï¿½Üµï¿½ï¿½ÐµÄ·ï¿½ *.min.css ï¿½Ä¼ï¿½
         .pipe(
             autoprefixer({
                 browsers: ["last 6 versions"],
                 cascade: false
             })
         )
-        .pipe(gulp.dest("dist/css")) // °Ñ´¦Àí¹ýµÄ css Êä³öµ½ dist/css Ä¿Â¼
+        .pipe(gulp.dest("dist/css")) // ï¿½Ñ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ css ï¿½ï¿½ï¿½ï¿½ï¿½ dist/css Ä¿Â¼
         .pipe(rename({ suffix: ".min" }))
         .pipe(cssnano())
         .pipe(gulp.dest("dist/css"));
 });
 
-// styleReload £¨½áºÏ watch ÈÎÎñ£¬ÎÞË¢ÐÂCSS×¢Èë£©
+// styleReload ï¿½ï¿½ï¿½ï¿½ï¿½ watch ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½ï¿½CSS×¢ï¿½ë£©
 gulp.task("styleReload", ["sass", "css"], function() {
     return gulp
         .src(["dist/css/**/*.css"])
         .pipe(cached("style"))
-        .pipe(browserSync.reload({ stream: true })); // Ê¹ÓÃÎÞË¢ÐÂ browserSync ×¢Èë CSS
+        .pipe(browserSync.reload({ stream: true })); // Ê¹ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½ï¿½ browserSync ×¢ï¿½ï¿½ CSS
 });
 
-// script £¨¿½±´ *.min.js£¬³£¹æ js ÔòÊä³öÑ¹ËõÓëÎ´Ñ¹ËõÁ½¸ö°æ±¾£©
+// script ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ *.min.jsï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ js ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½Î´Ñ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ±¾ï¿½ï¿½
 gulp.task("script", function() {
     return (gulp
             .src(["src/js/**/*.js"])
             .pipe(cached("script"))
             .pipe(gulp.dest("dist/js"))
-            .pipe(filter(["**/*", "!**/*.min.js"])) // É¸Ñ¡³ö¹ÜµÀÖÐµÄ·Ç *.min.js ÎÄ¼þ
-            // .pipe(jshint('.jshintrc')) // jsµÄÐ£ÑéÓëºÏ²¢£¬¸ù¾ÝÐèÒª¿ªÆô
+            .pipe(filter(["**/*", "!**/*.min.js"])) // É¸Ñ¡ï¿½ï¿½ï¿½Üµï¿½ï¿½ÐµÄ·ï¿½ *.min.js ï¿½Ä¼ï¿½
+            // .pipe(jshint('.jshintrc')) // jsï¿½ï¿½Ð£ï¿½ï¿½ï¿½ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½
             // .pipe(jshint.reporter('default'))
             // .pipe(concat('main.js'))
             // .pipe(gulp.dest('dist/js'))
-            .pipe(rename({ suffix: ".min" }))
-            .pipe(uglify())
-            .pipe(gulp.dest("dist/js")) );
+            // .pipe(rename({ suffix: ".min" }))
+            // .pipe(uglify())
+            .on("error", function(err) {
+                gutil.log(gutil.colors.red("[Errors]"), err.toString());
+            })
+            .pipe(gulp.dest("./dist/js")) );
+    // .pipe(livereload()) );
 });
 
 // image
@@ -108,20 +113,20 @@ gulp.task("image", function() {
                     multipass: true
                 })
             )
-            // È¡Öµ·¶Î§£º0-7£¨ÓÅ»¯µÈ¼¶£©,ÊÇ·ñÎÞËðÑ¹ËõjpgÍ¼Æ¬£¬ÊÇ·ñ¸ôÐÐÉ¨Ãègif½øÐÐäÖÈ¾£¬ÊÇ·ñ¶à´ÎÓÅ»¯svgÖ±µ½ÍêÈ«ÓÅ»¯
+            // È¡Öµï¿½ï¿½Î§ï¿½ï¿½0-7ï¿½ï¿½ï¿½Å»ï¿½ï¿½È¼ï¿½ï¿½ï¿½,ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½jpgÍ¼Æ¬ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½É¨ï¿½ï¿½gifï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¾ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½Å»ï¿½svgÖ±ï¿½ï¿½ï¿½ï¿½È«ï¿½Å»ï¿½
             .pipe(gulp.dest("dist/images")) );
 });
 
-// html ±àÒë html ÎÄ¼þ²¢¸´ÖÆ×ÖÌå
+// html ï¿½ï¿½ï¿½ï¿½ html ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 gulp.task("html", function() {
     return gulp
         .src("src/*/*.html")
         .pipe(fileinclude()) // include html
-        .pipe(rev()) // Éú³É²¢²åÈë MD5
+        .pipe(rev()) // ï¿½ï¿½ï¿½É²ï¿½ï¿½ï¿½ï¿½ï¿½ MD5
         .pipe(gulp.dest("dist"));
 });
 
-// ¸´ÖÆ×ÖÌå
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 gulp.task("font", function() {
     return gulp
         .src("src/fonts/**/*{.eot,svg,ttf,woff,woff2}")
@@ -129,43 +134,43 @@ gulp.task("font", function() {
         .pipe(gulp.dest("dist/fonts"));
 });
 
-// clean Çå¿Õ dist Ä¿Â¼
+// clean ï¿½ï¿½ï¿½ dist Ä¿Â¼
 gulp.task("clean", function() {
     return del("dist/**/*");
 });
 
-// build£¬¹ØÁ¬Ö´ÐÐÈ«²¿±àÒëÈÎÎñ
+// buildï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 gulp.task("build", ["sass", "css", "script", "image", "font"], function() {
     gulp.start("html");
 });
 
-// default Ä¬ÈÏÈÎÎñ£¬ÒÀÀµÇå¿ÕÈÎÎñ
+// default Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 gulp.task("default", ["clean"], function() {
     gulp.start("build");
 });
 
-// watch ¿ªÆô±¾µØ·þÎñÆ÷²¢¼àÌý
+// watch ï¿½ï¿½ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 gulp.task("watch", function() {
     browserSync.init({
         server: {
-            baseDir: "dist" // ÔÚ dist Ä¿Â¼ÏÂÆô¶¯±¾µØ·þÎñÆ÷»·¾³£¬×Ô¶¯Æô¶¯Ä¬ÈÏä¯ÀÀÆ÷
+            baseDir: "dist" // ï¿½ï¿½ dist Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         },
         browser: "chrome"
     });
 
-    // ¼à¿Ø SASS ÎÄ¼þ£¬ÓÐ±ä¶¯ÔòÖ´ÐÐCSS×¢Èë
+    // ï¿½ï¿½ï¿½ SASS ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ð±ä¶¯ï¿½ï¿½Ö´ï¿½ï¿½CSS×¢ï¿½ï¿½
     gulp.watch("src/sass/**/*.scss", ["styleReload"]);
-    // ¼à¿Ø CSS ÎÄ¼þ£¬ÓÐ±ä¶¯ÔòÖ´ÐÐCSS×¢Èë
+    // ï¿½ï¿½ï¿½ CSS ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ð±ä¶¯ï¿½ï¿½Ö´ï¿½ï¿½CSS×¢ï¿½ï¿½
     gulp.watch("src/css/**/*.css", ["styleReload"]);
-    // ¼à¿Ø js ÎÄ¼þ£¬ÓÐ±ä¶¯ÔòÖ´ÐÐ script ÈÎÎñ
+    // ï¿½ï¿½ï¿½ js ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ð±ä¶¯ï¿½ï¿½Ö´ï¿½ï¿½ script ï¿½ï¿½ï¿½ï¿½
     gulp.watch("src/js/**/*.js", ["script"]);
-    // ¼à¿ØÍ¼Æ¬ÎÄ¼þ£¬ÓÐ±ä¶¯ÔòÖ´ÐÐ image ÈÎÎñ
+    // ï¿½ï¿½ï¿½Í¼Æ¬ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ð±ä¶¯ï¿½ï¿½Ö´ï¿½ï¿½ image ï¿½ï¿½ï¿½ï¿½
     gulp.watch("src/images/**/*", ["image"]);
-    // ¼à¿Ø×ÖÌåÎÄ¼þ£¬ÓÐ±ä¶¯ÔòÖ´ÐÐ font ÈÎÎñ
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ð±ä¶¯ï¿½ï¿½Ö´ï¿½ï¿½ font ï¿½ï¿½ï¿½ï¿½
     gulp.watch("src/fonts/**/*", ["fonts"]);
-    // ¼à¿Ø html ÎÄ¼þ£¬ÓÐ±ä¶¯ÔòÖ´ÐÐ html ÈÎÎñ
+    // ï¿½ï¿½ï¿½ html ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Ð±ä¶¯ï¿½ï¿½Ö´ï¿½ï¿½ html ï¿½ï¿½ï¿½ï¿½
     gulp.watch("src/**/*.html", ["html"]);
-    // ¼à¿Ø dist Ä¿Â¼ÏÂ³ý css Ä¿Â¼ÒÔÍâµÄ±ä¶¯£¨Èçjs£¬Í¼Æ¬µÈ£©£¬Ôò×Ô¶¯Ë¢ÐÂÒ³Ãæ
+    // ï¿½ï¿½ï¿½ dist Ä¿Â¼ï¿½Â³ï¿½ css Ä¿Â¼ï¿½ï¿½ï¿½ï¿½Ä±ä¶¯ï¿½ï¿½ï¿½ï¿½jsï¿½ï¿½Í¼Æ¬ï¿½È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ë¢ï¿½ï¿½Ò³ï¿½ï¿½
     gulp
         .watch(["dist/**/*", "!dist/css/**/*"])
         .on("change", browserSync.reload);

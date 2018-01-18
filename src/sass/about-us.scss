@@ -2,14 +2,18 @@
  * @Author: jecyu
  * @Date: 2018-01-04 5:16:51 pm 
  * @Modified By: jeCyu 
- * @Last Modified time: 2018-01-11 5:42:45 pm 
+ * @Last Modified time: 2018-01-18 2:41:32 pm 
  */
 @import "mixin/_mixin.scss";
 
 // banner
 .section-banner {
-    height: pxTorem(350px);
+    height: pxTorem(400px);
     width: 100%;
+
+    @media screen and (max-width: 767px) {
+        height: pxTorem(250px);
+    }
 }
 
 /* banner */

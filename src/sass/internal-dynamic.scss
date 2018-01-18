@@ -2,14 +2,18 @@
  * @Author: jecyu
  * @Date: 2018-01-11 11:45:28 am 
  * @Modified By: jeCyu 
- * @Last Modified time: 2018-01-11 5:44:03 pm 
+ * @Last Modified time: 2018-01-18 3:13:38 pm 
  */
 
 @import "mixin/_mixin.scss";
 // banner
 .section-banner {
-    height: pxTorem(350px);
+    height: pxTorem(400px);
     width: 100%;
+
+    @media screen and (max-width: 767px) {
+        height: pxTorem(250px);
+    }
 }
 
 /* banner */
@@ -126,7 +130,7 @@
         .item-desc {
             margin-top: pxTorem(40px);
             font-size: pxTorem(16px);
-            text-indent: pxTorem(32px);
+            // text-indent: pxTorem(32px);
             color: #828282;
             line-height: 1.5;
         }
@@ -145,7 +149,7 @@
     color: #828282;
     // overflow: auto;
     display: flex;
-    margin-bottom: pxTorem(30px);
+    margin: pxTorem(30px) 0 pxTorem(30px) pxTorem(30px);
 
     .desc-txt {
         position: relative;
@@ -158,7 +162,7 @@
         .desc-heading {
             font-size: pxTorem(20px);
             @media screen and (max-width: 768px) {
-                font-size: pxTorem(16px);
+                font-size: pxTorem(14px);
             }
         }
 
@@ -167,6 +171,7 @@
             overflow: hidden;
             margin-top: pxTorem(20px);
             max-height: pxTorem(100px);
+            text-indent: 0;
 
             @media screen and (max-width: 768px) {
                 max-height: pxTorem(60px);

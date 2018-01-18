@@ -2,7 +2,7 @@
  * @Author: jecyu
  * @Date: 2018-01-04 5:16:51 pm 
  * @Modified By: jeCyu 
- * @Last Modified time: 2018-01-12 4:26:10 pm 
+ * @Last Modified time: 2018-01-18 11:50:22 am 
  */
 
 @import "mixin/_mixin.scss";
@@ -95,8 +95,19 @@
     //     text-align: center;
 
     img {
+        @media screen and (min-width: 1200px) {
+            width: pxTorem(1000px);
+        }
         display: inline-block;
         max-width: 100%;
         height: auto;
+    }
+
+    &.section-letme-go {
+        img {
+            @media screen and (min-width: 1200px) {
+                width: pxTorem(600px);
+            }
+        }
     }
 }

@@ -2,7 +2,7 @@
  * @Author: jecyu
  * @Date: 2018-01-11 10:50:27 am 
  * @Modified By: jeCyu 
- * @Last Modified time: 2018-01-11 5:42:56 pm 
+ * @Last Modified time: 2018-01-18 2:41:23 pm 
  */
 /**
  * @Author: jecyu
@@ -115,8 +115,13 @@
 }
 
 .section-banner {
-  height: 3.5rem;
+  height: 4rem;
   width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .section-banner {
+    height: 2.5rem;
+  }
 }
 
 /* banner */

@@ -2,7 +2,7 @@
  * @Author: jecyu
  * @Date: 2017-12-11 4:49:47 pm 
  * @Modified By: jeCyu 
- * @Last Modified time: 2018-01-12 10:43:42 am 
+ * @Last Modified time: 2018-01-18 2:59:20 pm 
  */
 
 @import "mixin/_mixin.scss";
@@ -355,6 +355,12 @@ body {
     display: flex;
     justify-content: space-between;
     font-size: pxTorem(14px);
+
+    @media screen and (max-width: 767px) {
+        align-items: center;
+        flex-direction: column;
+    }
+
     .social-wrap {
         position: relative;
         display: inline-block;
@@ -362,7 +368,8 @@ body {
         width: pxTorem(30px);
         border: pxTorem(1px) solid #fff;
         border-radius: 50%;
-        margin-left: pxTorem(40px);
+        margin: pxTorem(20px) 0 0 pxTorem(40px);
+
         text-align: center;
         line-height: pxTorem(30px);
         cursor: pointer;
@@ -377,12 +384,13 @@ body {
         .social-img {
             position: absolute;
             display: inline-block;
-            top: pxTorem(-120px);
-            left: 50%;
-            transform: translate(-50%);
+            bottom: 88%;
+            right: 50%;
+            transform: 0;
             display: none; // display: block;
-            height: pxTorem(100px);
-            width: pxTorem(100px);
+
+            height: pxTorem(150px);
+            width: pxTorem(150px);
             img {
                 border: pxTorem(2px) solid #ff8700;
                 border-radius: 10%;

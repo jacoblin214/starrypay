@@ -2,7 +2,7 @@
  * @Author: jecyu
  * @Date: 2018-01-11 10:50:27 am 
  * @Modified By: jeCyu 
- * @Last Modified time: 2018-01-11 5:42:56 pm 
+ * @Last Modified time: 2018-01-18 2:41:23 pm 
  */
 /**
  * @Author: jecyu
@@ -14,8 +14,12 @@
 @import "mixin/_mixin.scss";
 // banner
 .section-banner {
-    height: pxTorem(350px);
+    height: pxTorem(400px);
     width: 100%;
+
+    @media screen and (max-width: 767px) {
+        height: pxTorem(250px);
+    }
 }
 
 /* banner */

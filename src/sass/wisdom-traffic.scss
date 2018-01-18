@@ -2,7 +2,7 @@
  * @Author: jecyu
  * @Date: 2018-01-15 2:34:55 pm 
  * @Modified By: jeCyu 
- * @Last Modified time: 2018-01-15 7:51:45 pm 
+ * @Last Modified time: 2018-01-18 3:29:59 pm 
  */
 
 @import "mixin/_mixin.scss";
@@ -345,43 +345,37 @@
     }
     .carousel-caption {
         overflow: hidden;
-        left: 5%;
+        left: 0;
         bottom: 0;
-
+        opacity: 0.9;
         @media screen and (max-width: 992px) {
+            left: 10%;
             height: 60%;
             width: 80%;
         }
-
-        width: 40%;
-        height: 70%;
+        width: 100%;
+        height: 30%;
         padding: pxTorem(15px) pxTorem(15px) 0 pxTorem(15px);
-
         background: #fff;
         text-shadow: initial;
-        border-bottom: pxTorem(3px) solid rgba($color: #000000, $alpha: 0.2);
-        box-shadow: 0 pxTorem(30px) pxTorem(5px) pxTorem(2px)
+        text-align: left;
+        box-shadow: 0 pxTorem(30px) pxTorem(15px) pxTorem(4px)
             rgba($color: #000000, $alpha: 0.1);
-
         .hd {
             color: #ff8601;
             .title {
-                margin-bottom: pxTorem(10px);
+                padding-bottom: pxTorem(10px);
                 font-size: pxTorem(18px);
-
                 @media screen and (max-width: 767px) {
                     font-size: pxTorem(16px);
                 }
             }
-
             border-bottom: pxTorem(2px) solid rgba($color: #000000, $alpha: 0.1);
         }
-
         .bd {
             margin-top: pxTorem(15px);
             color: #828282;
             font-size: pxTorem(16px);
-
             @media screen and (max-width: 767px) {
                 margin-top: pxTorem(10px);
                 font-size: pxTorem(12px);

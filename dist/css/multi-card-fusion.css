@@ -2,7 +2,7 @@
  * @Author: jecyu
  * @Date: 2018-01-04 5:16:51 pm 
  * @Modified By: jeCyu 
- * @Last Modified time: 2018-01-12 4:26:10 pm 
+ * @Last Modified time: 2018-01-18 11:50:22 am 
  */
 .vert-offset-top-0 {
   margin-top: 0em;
@@ -200,4 +200,14 @@
   display: inline-block;
   max-width: 100%;
   height: auto;
+}
+@media screen and (min-width: 1200px) {
+  .section img {
+    width: 10rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .section.section-letme-go img {
+    width: 6rem;
+  }
 }

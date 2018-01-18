@@ -301,13 +301,18 @@
                     font-size: pxTorem(14px);
                     line-height: pxTorem(20px);
                 }
+                /* line */
                 &::before {
                     content: "";
                     display: block;
                     position: absolute;
                     left: 0;
-                    top: 50%;
-                    transform: translate(0, -50%);
+                    top: pxTorem(14px);
+
+                    @media screen and (max-width: 767px) {
+                        top: pxTorem(8px);
+                    }
+
                     height: pxTorem(3px);
                     width: pxTorem(14px);
                     background: #ff8601;
@@ -327,24 +332,26 @@
     }
     .carousel-caption {
         overflow: hidden;
-        left: 5%;
+        left: 0;
         bottom: 0;
+        opacity: 0.9;
         @media screen and (max-width: 992px) {
+            left: 10%;
             height: 60%;
             width: 80%;
         }
-        width: 40%;
-        height: 70%;
+        width: 100%;
+        height: 30%;
         padding: pxTorem(15px) pxTorem(15px) 0 pxTorem(15px);
         background: #fff;
         text-shadow: initial;
-        border-bottom: pxTorem(3px) solid rgba($color: #000000, $alpha: 0.2);
-        box-shadow: 0 pxTorem(30px) pxTorem(5px) pxTorem(2px)
+        text-align: left;
+        box-shadow: 0 pxTorem(30px) pxTorem(15px) pxTorem(4px)
             rgba($color: #000000, $alpha: 0.1);
         .hd {
             color: #ff8601;
             .title {
-                margin-bottom: pxTorem(10px);
+                padding-bottom: pxTorem(10px);
                 font-size: pxTorem(18px);
                 @media screen and (max-width: 767px) {
                     font-size: pxTorem(16px);
