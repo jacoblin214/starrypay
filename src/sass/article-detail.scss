@@ -2,13 +2,15 @@
  * @Author: jecyu
  * @Date: 2018-01-18 9:50:13 pm 
  * @Modified By: jeCyu 
- * @Last Modified time: 2018-01-18 10:46:38 pm 
+ * @Last Modified time: 2018-01-19 11:34:12 am 
  */
 @import "mixin/_mixin.scss";
 
 .article-header {
     padding: pxTorem(40px) 0;
-    padding-left: 35%;
+    @media screen and (min-width: 992px) {
+        padding-left: 35%;
+    }
     border-bottom: pxTorem(3px) solid rgba(0, 0, 0, 0.1);
     // text-align: right;
     .blog-title {
@@ -22,8 +24,26 @@
     }
 }
 
+/* Switching the order of block elements */
+@media screen and (max-width: 991px) {
+    .article-body {
+        display: flex;
+        flex-direction: column;
+
+        .content {
+            order: 1;
+        }
+
+        .sidebar {
+            order: 2;
+        }
+    }
+}
+
 .sidebar {
     padding-left: 0;
+    padding-right: pxTorem(30px);
+
     .blumb-list {
         margin: pxTorem(20px) 0;
         padding-bottom: pxTorem(20px);
@@ -64,8 +84,8 @@
 }
 
 .content {
-    padding-right: 0;
-    padding-top: pxTorem(20px);
+    padding: pxTorem(20px) 0 0 0;
+
     color: #828282;
 
     img {
@@ -79,13 +99,24 @@
 
     .social-share {
         margin-top: pxTorem(10px);
-        border-top: pxTorem(2px) solid rgba(0, 0, 0, 0.2);
+        margin-bottom: pxTorem(10px);
         text-align: right;
+        font-size: 0;
 
         .iconfont {
             font-size: pxTorem(40px);
-            color: #b19434;
             cursor: pointer;
         }
+
+        img {
+            margin: 0;
+            display: inline-block;
+            width: pxTorem(40px);
+        }
+    }
+
+    .nav-con {
+        margin-bottom: pxTorem(20px);
+        border-top: pxTorem(2px) solid rgba(0, 0, 0, 0.2);
     }
 }
