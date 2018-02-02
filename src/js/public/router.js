@@ -6,8 +6,8 @@
  */
 
 function Router() {
-    this.routes = {};
-    this.currentUrl = "";
+  this.routes = {};
+  this.currentUrl = "";
 }
 
 /**
@@ -16,21 +16,21 @@ function Router() {
  * @param {*} callback
  */
 Router.prototype.route = function(path, callback) {
-    this.routes[path] = callback || function() {};
+  this.routes[path] = callback || function() {};
 };
 
 /**
  * 执行当前 url 对应的回调函数，更新页面
  */
 Router.prototype.refresh = function() {
-    this.currentUrl = location.hash.slice(1) || "/";
-    this.routes[this.currentUrl]();
+  this.currentUrl = location.hash.slice(1) || "/";
+  this.routes[this.currentUrl]();
 };
 
 /**
  * 监听浏览器 url hash 更新时间
  */
 Router.prototype.init = function() {
-    window.addEventListener("load", this.refresh.bind(this), false);
-    window.addEventListener("hashchange", this.refresh.bind(this), false);
+  window.addEventListener("load", this.refresh.bind(this), false);
+  window.addEventListener("hashchange", this.refresh.bind(this), false);
 };

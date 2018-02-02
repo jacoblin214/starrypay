@@ -75,11 +75,11 @@ Router.route("/" + tab_3, function() {
     changeTab($tabs_item_link, tab_3, tab_3_bannerUrl);
 });
 
-$tabs_item_link.on("click", function() {
-    // 获取目标 tab
-    let attr = $(this).attr("data-targetTab");
-    // 获取 bannerUrl
-    let banner_url = $(this).attr("data-bannerUrl");
-    changeTab($tabs_item_link, attr, banner_url);
-    return false; // 禁止链接的默认行为
-});
+// $tabs_item_link.on("click", function() {
+//     // 获取目标 tab
+//     let attr = $(this).attr("data-targetTab");
+//     // 获取 bannerUrl
+//     let banner_url = $(this).attr("data-bannerUrl");
+//     changeTab($tabs_item_link, attr, banner_url);
+//     return false; // 禁止链接的默认行为
+// });

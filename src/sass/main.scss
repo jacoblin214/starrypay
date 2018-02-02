@@ -1,0 +1,37 @@
+/*
+ * @Author: Jecyu 
+ * @Date: 2018-01-26 16:10:43 
+ * @Last Modified by: Jecyu
+ * @Last Modified time: 2018-01-31 17:10:38
+ */
+
+@charset 'utf-8';
+
+@import "abstracts/mixin.scss";
+
+@import "vendors/bootstrap.scss";
+@import "vendors/iconfont.scss";
+
+@import "vendor-extensions/custom-bootstrap.scss";
+
+@import "base/reset.scss";
+@import "base/_typography.scss";
+
+@import "layout/header.scss";
+@import "layout/footer.scss";
+
+@import "components/swiper.scss";
+@import "components/media.scss";
+
+@import "pages/index.scss";
+@import "pages/about-us.scss";
+@import "pages/article-detail.scss";
+@import "pages/citizen-card.scss";
+@import "pages/cooperation-ecology.scss";
+@import "pages/digital-china.scss";
+@import "pages/multi-card-fusion.scss";
+@import "pages/product-center.scss";
+@import "pages/starry-software.scss";
+@import "pages/wisdom-campus.scss";
+@import "pages/wisdom-tourism.scss";
+@import "pages/wisdom-traffic.scss";

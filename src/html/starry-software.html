@@ -3,7 +3,6 @@
 
 <head>
     @@include('../html/common/head.html')
-    <link rel="stylesheet" href="../css/starry-software.css">
 
     <title>星民通</title>
 </head>
@@ -21,7 +20,7 @@
             </div>
         </di>
     </section>
-    <main class="section-main">
+    <main class="section-main starry-software">
         <div class="container">
             <div class="section">
                 <h3 class="section-title">星民通</h3>
@@ -53,7 +52,7 @@
                                 <a href="###" class="btn" data-toggle="modal" data-target="#myModal">ios用户下载</a>
                                 <a href="###" class="btn" data-toggle="modal" data-target="#myModal">android用户下载</a>
                             </div>
-                            <p class="prompt"> 星民通APP最新版下载 （微信扫描二维码进入下载页面）</p>
+                            <!-- <p class="prompt"> 星民通APP最新版下载 （微信扫描二维码进入下载页面）</p> -->
                             <!-- Modal -->
                             <div class="modal fade" id="myModal" tabindex="-1">
                                 <div class="modal-dialog" role="document">
@@ -63,10 +62,13 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                             <h4 class="modal-title" id="myModalLabel">星民通 ios 版</h4>
-
                                         </div>
                                         <div class="modal-body">
                                             <img src="../images/qrcode_ios.png" class="img-responsive" alt="">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <p class="prompt"> 星民通APP最新版下载
+                                                <br> （微信扫描二维码进入下载页面）</p>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +82,7 @@
     </main>
 
     @@include('../html/common/footer.html') @@include('../html/common/foot.html')
-    <script src="../js/index.js"></script>
+    <script src="../js/starry-software.js"></script>
 
 </body>
 

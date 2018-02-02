@@ -4,32 +4,32 @@
  * @Modified By: jeCyu
  * @Last Modified time: 2018-01-18 9:35:05 pm
  */
-
 /**
  * 更换 tab 内容
  * @param {*} tabNav
  * @param {*} tabConent
  */
 function changeTab(tabNav, tabConentID) {
-    // 遍历 a 链接，添加 active
-    tabNav.each(function(index) {
-        if ($(this).attr("data-targetTab") === tabConentID) {
-            $(this)
-                .parent()
-                .addClass("active")
-                .siblings()
-                .removeClass("active");
-        }
-    });
-
-    // 显示对应的 tab-content
-    $("#" + tabConentID)
-        .show()
+  // 遍历 a 链接，添加 active
+  tabNav.each(function(index) {
+    var tab_nav_attr = $(this).attr("href") + ""; // 加 '' 转为字符串
+    if (tab_nav_attr.slice(2) === tabConentID) {
+      $(this)
+        .parent() // 它父亲 tab-item
+        .addClass("active")
         .siblings()
-        .hide();
+        .removeClass("active");
+    }
+  });
+
+  // 显示对应的 tab-content
+  $("#" + tabConentID)
+    .show()
+    .siblings()
+    .hide();
 }
 
-// 路由
+// 初始化路由
 window.Router = new Router();
 window.Router.init();
 
@@ -44,23 +44,29 @@ var tab_3 = "internal_dynamic";
 var tab_4 = "new_dynamic";
 
 Router.route("/" + tab_1, function() {
-    changeTab($tabs_item_link, tab_1);
+  changeTab($tabs_item_link, tab_1);
 });
 
 Router.route("/" + tab_2, function() {
-    changeTab($tabs_item_link, tab_2);
+  changeTab($tabs_item_link, tab_2);
 });
 
 Router.route("/" + tab_3, function() {
-    changeTab($tabs_item_link, tab_3);
+  changeTab($tabs_item_link, tab_3);
 });
 
 Router.route("/" + tab_4, function() {
-    changeTab($tabs_item_link, tab_4);
+  changeTab($tabs_item_link, tab_4);
 });
 
-$tabs_item_link.on("click", function() {
-    let attr = $(this).attr("data-targetTab");
-    changeTab($tabs_item_link, attr);
-    return false; // 禁止链接的默认行为
+Router.route("/" + tab_5, function() {
+  changeTab($tabs_item_link, tab_5);
+});
+
+Router.route("/" + tab_6, function() {
+  changeTab($tabs_item_link, tab_6);
+});
+
+Router.route("/" + tab_7, function() {
+  changeTab($tabs_item_link, tab_7);
 });

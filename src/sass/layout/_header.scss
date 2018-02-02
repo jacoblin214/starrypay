@@ -1,0 +1,64 @@
+/* site header */
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+    width: 100%;
+    box-shadow: 0 0 pxTorem(3px) rgba($color: #000000, $alpha: 0.1);
+}
+
+/* nav-top */
+
+.nav-top {
+    background: hsl(0, 0%, 35%);
+}
+
+// site-nav
+.navbar-fixed-bottom .navbar-collapse,
+.navbar-fixed-top .navbar-collapse {
+    max-height: 100%;
+}
+
+.navbar {
+    position: relative; // display: flex;
+    // align-items: center;
+    min-height: pxTorem(60px);
+    height: auto;
+    margin-bottom: 0;
+    border: 1px solid transparent;
+    font-size: pxTorem(18px);
+    background: hsl(0, 0%, 100%);
+}
+
+.navbar-nav > li > a {
+    padding-top: pxTorem(20px);
+    padding-bottom: pxTorem(20px);
+    line-height: pxTorem(20px);
+    /* main menu */
+    a:focus,
+    a:hover {
+        color: #ff8700;
+        text-decoration: underline;
+    }
+}
+
+// nav brand
+.navbar-brand {
+    height: pxTorem(60px);
+    .Brand {
+        width: pxTorem(120px);
+    }
+}
+
+// dropdown-menu
+.dropdown-menu {
+    position: absolute;
+    left: 0;
+    min-width: 100%;
+    font-size: pxTorem(16px);
+    filter: opacity(0.8);
+    box-shadow: pxTorem(0px) pxTorem(0px) pxTorem(2px)
+        rgba($color: #000000, $alpha: 0.4);
+}

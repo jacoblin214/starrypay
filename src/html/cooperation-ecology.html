@@ -3,8 +3,6 @@
 
 <head>
     @@include('../html/common/head.html')
-    <link rel="stylesheet" href="../css/cooperation-ecology.css">
-
     <title>合作与生态</title>
 </head>
 
@@ -20,32 +18,32 @@
             </div>
         </di>
     </section>
-    <main class="section-main">
+    <main class="section-main cooperation-ecology">
         <div class="container">
             <div class="tab row" id="tabs">
                 <ul class="tabs-nav col-md-3 col-xs-12">
-                    <li class="nav-item">
+                    <!--     <li class="nav-item">
                         <a href="###" data-targetTab="card_cooperation">发卡合作</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a href="#/industry_cooperation" data-targetTab="industry_cooperation">行业合作</a>
                     </li>
                     <li class="nav-item">
-                        <a href="###" data-targetTab="industry_cooperation">行业合作</a>
+                        <a href="#/pay_for_access" data-targetTab="pay_for_access">支付接入</a>
                     </li>
                     <li class="nav-item">
-                        <a href="###" data-targetTab="pay_for_access">支付接入</a>
+                        <a href="#/authentication_access" data-targetTab="authentication_access">认证接入</a>
                     </li>
                     <li class="nav-item">
-                        <a href="###" data-targetTab="authentication_access">认证接入</a>
+                        <a href="#/sub_application_access" data-targetTab="sub_application_access">子应用接入</a>
                     </li>
                     <li class="nav-item">
-                        <a href="###" data-targetTab="sub_application_access">子应用接入</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="###" data-targetTab="joint_venture">合作企业</a>
+                        <a href="#/joint_venture" data-targetTab="joint_venture">合作企业</a>
                     </li>
                 </ul>
                 <div class="tab-content col-md-8 col-md-offset-1 col-xs-12">
                     <!-- 发卡合作 -->
-                    <div class="tab-item" id="card_cooperation">
+                    <!-- <div class="tab-item" id="card_cooperation">
                         <h2 class="tab-title underline">发卡合作模式</h2>
                         <div class="content">
                             <ul class="desc-list">
@@ -104,69 +102,60 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- 行业合作 -->
                     <div class="tab-item" id="industry_cooperation">
-                        <h2 class="tab-title underline">行业合作模式</h2>
-                        <div class="content">
-                            <ul class="desc-list">
-                                <li class="desc-item">
-                                    <h4 class="heading">介绍</h4>
-                                    <p class="info">星民易付身份认证服务接入文档旨在合作方快速接入星民易
-                                        <br>付身份认证服务，集成身份信息验证能力和远程面签能力。支持两种方式接入星民身份认证服务，包括：</p>
-                                    <p class="info">1.后台服务接口：HTTP+XML接口</p>
-                                    <p class="info">2.终端SDK方式：包括Android、iOS平台</p>
-                                </li>
-                                <li class="desc-item">
-                                    <h4 class="heading">文档下载</h4>
-                                    <table class="table doc-download table-bordered ">
-                                        <thead>
-                                            <tr>
-                                                <th class="No">序号</th>
-                                                <th class="filename">文档名称</th>
-                                                <th class="upload-date">上传时间</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="file-item">
-                                                <td class="No">01</td>
-                                                <td class="filename">
-                                                    <a href="###" download="specification">星民易付身份认证服务接入规范V1.2.3.pdf</a>
-                                                </td>
-                                                <td class="upload-date">2017-12-05</td>
-                                            </tr>
-                                            <tr class="file-item">
-                                                <td class="No">02</td>
-                                                <td class="filename">
-                                                    <a href="###" download="specification">星民易付身份认证服务接入规范V1.2.3.pdf</a>
-                                                </td>
-                                                <td class="upload-date">2017-11-21</td>
-                                            </tr>
-                                            <tr class="file-item">
-                                                <td class="No">03</td>
-                                                <td class="filename">
-                                                    <a href="###" download="specification">星民易付身份认证Android SDK接口说明V0.1.pdf</a>
-                                                </td>
-                                                <td class="upload-date">2017-10-25</td>
-                                            </tr>
-                                            <tr class="file-item">
-                                                <td class="No">04</td>
-                                                <td class="filename">
-                                                    <a href="###" download="specification">星民易付身份认证IOS SDK接口说明V0.1.pdf</a>
-                                                </td>
-                                                <td class="upload-date">2017-09-15</td>
-                                            </tr>
-                                            <tr class="file-item">
-                                                <td class="No">05</td>
-                                                <td class="filename">
-                                                    <a href="###" download="specification">星民易付身份认证服务产品目录V1.0.0.doc</a>
-                                                </td>
-                                                <td class="upload-date">2017-07-21</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </li>
-                            </ul>
+                        <h2 class="tab-title underline">行业合作</h2>
+                        <div class="content content-1">
+                            <h4 class="content-title">行业合作与发卡合作</h4>
+                            <div class="row content-body">
+                                <div class="col-md-6 content-text">
+                                    <p>星民易付运营的“多卡融合公共服务平台”，可对接多行业应用，将各行业实体卡片装进手机，打通线上线下，实现一卡通行。公司秉承“开放、合作、便民”的宗旨，可对接社保、医疗、公共交通、园区管理、学校教育等多行业。
+                                    </p>
+                                    <p>
+                                        星民易付与三大运营商合作发卡，同时与SIM卡的卡商、芯片制造商合作制卡，构建产业链生态圈，保障一卡通行业的快速响应与运作。
+                                    </p>
+                                </div>
+                                <div class="col-md-6 content-img">
+                                    <img src="../images/cooperation/cooperaton_m-1.png" alt="" class="img-responsive">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content content-2">
+                            <h4 class="content-title">星民易付对接多行业，使用的多卡融合APP，加载各种不同的卡应用，一张RCC-SIM卡即可成为银行卡、公交卡、社保卡、门禁卡、学生卡，甚至是身份证。</h4>
+                            <div class="row content-body">
+                                <div class="col-md-6">
+                                    <img src="../images/cooperation/cooperaton_m-2.png" alt="" class="img-responsive">
+                                </div>
+                                <div class="col-md-6 content-text">
+                                    <ul class="feature-list">
+                                        <li class="feature-item">商超消费，刷手机支付，安全便捷；</li>
+                                        <li class="feature-item">公共交通，出租车、公交车、轨道交通，公共自行车，应有尽有，只用带部手机，出行方便，支付高效；</li>
+                                        <li class="feature-item">智慧社区、园区，打造安全的门禁出入身份验证、人员管理体系; 智慧校园，融合学校的教学管理与市民卡系统，提供门禁、考勤、消费以及学生优惠乘车等便利服务；</li>
+                                        <li class="feature-item">医疗社保全自助、线上预约挂号、线下刷手机支付诊费，高效快捷享受医疗服务；</li>
+                                        <li class="feature-item">政务办理在线预约、身份认证，简化手续和流程，支付结尾，无论是银行卡、在线支付还是网银、扫码都能融合。</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="content content-3">
+                            <h4 class="content-title">便民、利民、惠民</h4>
+                            <div class="row content-body">
+                                <div class="col-md-4 content-body__item">
+                                    <img class="img-responsive" src="../images/cooperation/cooperaton_icon-1.png" alt="">
+                                    <p>对于民众而言，实现了便捷与安全兼得，免去了携带多张卡、管理多张卡的烦恼，一部手机一张SIM卡，可以畅行城市、生活无忧，做到了便民、利民、惠民。
+                                    </p>
+                                </div>
+                                <div class="col-md-4 content-body__item">
+                                    <img class="img-responsive" src="../images/cooperation/cooperaton_icon-2.png" alt="" class="img-responsive">
+                                    <p>对于商户而言，可以使一切手机轻松实现非接快捷支付功能。RCC-SIM卡的载体安全，同时低成本、应用高效对接，且友好支持云闪付技术。</p>
+                                </div>
+                                <div class="col-md-4 content-body__item">
+                                    <img class="img-responsive" src="../images/cooperation/cooperaton_icon-3.png" alt="" class="img-responsive">
+                                    <p>对于政府而言，在安全的前提下开放信息平台，为监管部门的监控、统计、分析提供有力支撑；例如在公众日常消费行为、流动人口信息采集等事务的监管，提升政府职能部门的威慑力度等，使得监管工作更加全面、精准。</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- 支付接入 -->
@@ -376,7 +365,7 @@
                         <div class="content">
                             <ul class="desc-list">
                                 <li class="desc-item">
-                                    <h4 class="heading">企业LOGO</h4>
+                                    <!-- <h4 class="heading">企业LOGO</h4> -->
                                     <img class="figure img-responsive" src="../images/cooperation/cooperation_logo@3x.png" alt="">
                                 </li>
                             </ul>
