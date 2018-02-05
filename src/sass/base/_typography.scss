@@ -1,44 +1,44 @@
 .inner-center {
-    width: pxTorem(1200px);
-    margin-left: auto;
-    margin-right: auto;
+  width: pxTorem(1200px);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* custom fixed width */
 
 @media (min-width: 1200) {
-    .container {
-        max-width: pxTorem(1200px);
-    }
+  .container {
+    max-width: pxTorem(1200px);
+  }
 }
 
 .clearfix::after {
-    content: ".";
-    visibility: hidden;
-    height: 0;
-    display: block;
-    clear: both;
+  content: ".";
+  visibility: hidden;
+  height: 0;
+  display: block;
+  clear: both;
 }
 
 .brumb-list {
-    padding: pxTorem(10px) 0;
-    font-size: 0;
-    text-align: right;
-    .brumb-item {
-        font-size: pxTorem(16px);
-        display: inline-block;
-        padding: 0 pxTorem(20px);
-        & + .brumb-item {
-            border-left: pxTorem(2px) solid hsl(0, 0%, 100%);
-        }
+  padding: pxTorem(10px) 0;
+  font-size: 0;
+  text-align: right;
+  .brumb-item {
+    font-size: pxTorem(16px);
+    display: inline-block;
+    padding: 0 pxTorem(20px);
+    & + .brumb-item {
+      border-left: pxTorem(2px) solid hsl(0, 0%, 100%);
     }
-    .brumb-link {
-        color: hsl(0, 0%, 100%);
-    }
+  }
+  .brumb-link {
+    color: hsl(0, 0%, 100%);
+  }
 }
 
 /* The fixed navbar will overlay your other content, unless you add padding to the top of the <body> */
 
 body {
-    padding-top: pxTorem(106px);
+  padding-top: pxTorem(106px);
 }

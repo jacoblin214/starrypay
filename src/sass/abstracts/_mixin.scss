@@ -1,24 +1,24 @@
 $browser-default-font-size: 100px !default;
 @function pxTorem($px) {
-    @return $px / $browser-default-font-size * 1rem;
+  @return $px / $browser-default-font-size * 1rem;
 }
 
 // for font-dpr
 @mixin font-dpr($font-size) {
-    font-size: $font-size;
-    [data-dpr="2"] & {
-        font-size: $font-size * 2;
-    }
-    [data-dpr="3"] & {
-        font-size: $font-size * 3;
-    }
+  font-size: $font-size;
+  [data-dpr="2"] & {
+    font-size: $font-size * 2;
+  }
+  [data-dpr="3"] & {
+    font-size: $font-size * 3;
+  }
 }
 
 @for $i from 0 through 12 {
-    .vert-offset-top-#{$i} {
-        margin-top: #{$i}em;
-    }
-    .vert-offset-bottom-#{$i} {
-        margin-bottom: #{$i}em;
-    }
+  .vert-offset-top-#{$i} {
+    margin-top: #{$i}em;
+  }
+  .vert-offset-bottom-#{$i} {
+    margin-bottom: #{$i}em;
+  }
 }

@@ -28,7 +28,7 @@ Router.prototype.refresh = function() {
 };
 
 /**
- * 监听浏览器 url hash 更新时间
+ * 监听浏览器 url hash 更新事件
  */
 Router.prototype.init = function() {
   window.addEventListener("load", this.refresh.bind(this), false);
